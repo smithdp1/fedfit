@@ -21,6 +21,7 @@
                     </p>
                 </div>
             </a>
+            @if (auth()->user())
             <div>
                 @if (auth()->user()?->isFollowing($user))
                     <button
@@ -40,6 +41,7 @@
                     </button>
                 @endif
             </div>
+            @endif
         </div>
     @endforeach
 </div>
