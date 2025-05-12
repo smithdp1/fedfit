@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <!-- Follow Button -->
-                @if(auth->user)
+                @if(auth()->user())
                 <div class="flex flex-col text-right">
                     @if ($user->id === auth()->user()->id)
                         <button
