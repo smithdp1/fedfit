@@ -19,7 +19,7 @@
             @endif
 
             <livewire:components.tweets.tweet-user :tweet="$tweet->originalTweet"/>
-            <a href="{{ $this->getTweetUrl() }}" wire:navigate.hover class="!text-black !dark:text-white !no-underline">
+            <a href="{{ $this->getTweetUrl() }}" wire:navigate.hover class=" !dark:text-white !no-underline">
                 <p
                     class="tweet-body"
                 >
@@ -59,8 +59,8 @@
             class="border-b border-t border-gray-200 dark:border-dim-200 hover:bg-gray-100 dark:hover:bg-dim-300 cursor-pointer transition duration-350 ease-in-out pb-4 border-l border-r"
         >
             <livewire:components.tweets.tweet-user :tweet="$tweet"/>
-            <a href="{{ route('tweet.show', $tweet) }}" wire:navigate.hover class="!text-black !dark:text-white !no-underline">
-                <p class="tweet-body !text-black">
+            <a href="{{ route('tweet.show', $tweet) }}" wire:navigate.hover class=" !dark:text-white !no-underline">
+                <p class="tweet-body ">
                     {!! $tweet->content_with_links !!}
                 </p>
 
@@ -120,8 +120,8 @@
                         </p>
                     </div>
 
-                    <a href="{{ route('tweet.show', $tweet) }}" class="!text-black !dark:text-white !no-underline" wire:navigate.hover>
-                        <p class="tweet-body !text-black !pl-0">
+                    <a href="{{ route('tweet.show', $tweet) }}" class=" !dark:text-white !no-underline" wire:navigate.hover>
+                        <p class="tweet-body  !pl-0">
                             {!! $tweet->content_with_links !!}
                         </p>
                         @if ($tweet->getMedia()->count() > 0)
