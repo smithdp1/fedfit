@@ -14,8 +14,9 @@
             </div>
         </main>
     </div>
-
+@if(auth()->user())
     @if ($user->id === auth()->user()->id)
         <livewire:modals.edit-profile-modal/>
+    @endif
     @endif
 </div>
