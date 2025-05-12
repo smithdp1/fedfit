@@ -21,7 +21,7 @@
             <livewire:components.tweets.tweet-user :tweet="$tweet->originalTweet"/>
             <a href="{{ $this->getTweetUrl() }}" wire:navigate.hover class="!text-black !dark:text-white !no-underline">
                 <p
-                    class="tweet-body !text-black"
+                    class="tweet-body"
                 >
                     @if ($tweet->originalTweet && $tweet->content)
                         {!! $tweet->content_with_links !!}
