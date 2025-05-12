@@ -13,10 +13,17 @@ class UserList extends Component
 
     public function mount(): void
     {
-        $this->users = User::inRandomOrder()
-            ->whereNot('id', auth()->user()->id)->
-            limit($this->limit)
-            ->get();
+        if(auth()->user() === null) {
+            $this->users = User::inRandomOrder()
+                ->limit($this->limit)
+                ->get();
+        } else{
+            $this->users = User::inRandomOrder()
+                ->whereNot('id', auth()->user()->id)
+                ->limit($this->limit)
+                ->get();
+        }
+       
     }
 
     public function toggleFollow(User $user): void

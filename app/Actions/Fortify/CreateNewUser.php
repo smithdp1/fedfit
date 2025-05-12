@@ -2,9 +2,12 @@
 
 namespace App\Actions\Fortify;
 
+
+
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Carbon;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 
@@ -31,7 +34,7 @@ class CreateNewUser implements CreatesNewUsers
             'name' => $input['name'],
             'username' => $input['username'],
             'email' => $input['email'],
-            'password' => Hash::make($input['password']),
+            'username_last_updated_at' => Carbon::now(),
         ]);
     }
 }
