@@ -16,7 +16,7 @@ Route::get('/profile/{user:username}', Profile::class)->name('profile.show');
 Route::middleware(['auth:sanctum',
 config('jetstream.auth_session'),
 'verified'])->group(function () {
-   Route::get('/tweet/{tweet:uuid}', Tweet::class)->name('tweet.show');
+    Route::get('/tweet/{tweet:uuid}', Tweet::class)->name('tweet.show');
     Route::get('/notifications', Notifications::class)->name('notifications');
     Route::get('/follower/list', FollowerList::class)->name('follower.list');
 });
