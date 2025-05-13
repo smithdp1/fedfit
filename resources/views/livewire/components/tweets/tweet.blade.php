@@ -14,7 +14,7 @@
                             </g>
                         </svg>
                     </div>
-                    <div class="text-xs font-bold">{{ $tweet->user->name }} retweeted</div>
+                    <div class="text-xs font-bold">{{ $tweet->user->name }} reposted</div>
                 </div>
             @endif
 
@@ -69,7 +69,7 @@
                         @foreach($tweet->getMedia() as $media)
                             <div class="w-1/2 px-2 mb-4">
                                 <div class="rounded-2xl overflow-hidden border border-gray-600">
-                                    <img src="{{ $media->getUrl() }}" alt="Tweet Image"
+                                    <img src="{{ $media->getUrl() }}" alt="Post Image"
                                          class="w-full h-auto object-cover rounded-2xl">
                                 </div>
                             </div>
