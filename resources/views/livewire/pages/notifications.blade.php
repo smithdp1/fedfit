@@ -7,7 +7,10 @@
                 Notifications
             </h2>
         </div>
-
+            <?php
+            $notifications = $this->getNotifications();
+            dd($notifications);
+            ?>
         <div wire:poll>
             @foreach($this->getNotifications() as $notification)
                 <livewire:components.notification :notification="$notification" :key="$notification->id" />
