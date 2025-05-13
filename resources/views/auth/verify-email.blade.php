@@ -1,4 +1,7 @@
 <x-guest-layout>
+    <?php
+    $user = auth()->user();
+    ?>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
