@@ -11,7 +11,9 @@ use Illuminate\Support\Number;
 Route::get('/', Home::class)->name('home');
 Route::get('/profile/{user:username}', Profile::class)->name('profile.show');
 
-Route::middleware('auth')->group(function () {
+// I want to make sure email verification is required for all routes
+// except for the home page and the profile page using the ensureEmailIsVerified middleware
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/tweet/{tweet:uuid}', Tweet::class)->name('tweet.show');
     Route::get('/notifications', Notifications::class)->name('notifications');
     Route::get('/follower/list', FollowerList::class)->name('follower.list');
